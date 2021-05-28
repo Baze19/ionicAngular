@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/recipies">
+      </ion-back-button>
+    </ion-buttons>
+
+    <ion-title> {{loadedrecipie.title}}</ion-title>
+    <ion-buttons slot="primary">
+     <ion-button (click)="onDelete()">
+      <ion-icon name="trash-outline" ></ion-icon>
+     </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col class="ion-no-padding">
+
+        <ion-img [src]="loadedrecipie.imageUrl"></ion-img>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+
+        <h6 class="ion-text-center ion-text-uppercase">{{loadedrecipie.title}} </h6>
+
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item *ngFor="let ig of loadedrecipie.ingredient">
+          <h6>{{ig}} </h6>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
